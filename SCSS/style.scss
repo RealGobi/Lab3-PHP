@@ -11,6 +11,13 @@ body {
         padding: 3rem;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.267);
+        ul {
+            margin: 5rem 0 0 0;
+            padding: 0;
+            li {
+                list-style: none;
+            }
+        }
         input{
             margin: 1rem;
             &[type="number"]{

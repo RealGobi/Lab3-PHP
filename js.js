@@ -1,3 +1,4 @@
+
 function makeReq(url, method, formData, callback){
     fetch(url, {
         method: method,
@@ -22,6 +23,12 @@ function save(){
     requestData.append("inputDate", date);
     makeReq("function.php", "POST", requestData, (response)=>{
         console.log(response)
-
+// skriver ut allt i js, men ska väl va i php? hmm..
+    const htmlList = document.querySelector('.save');
+    htmlList.innerHTML = '';
+        var listItem = document.createElement('li')
+        listItem.innerHTML =  JSON.stringify(response).substr(1).slice(0, -1);
+        htmlList.appendChild(listItem)
+    
 })
 }
