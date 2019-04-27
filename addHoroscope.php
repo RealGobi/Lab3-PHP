@@ -22,16 +22,29 @@ class AddHoroskop{
 }
 function check($date, $result){
 
-    $checkDate = new DateTime($date);
-    foreach($result as $item){
-            $upperBound = new DateTime($item['dateFrom']);
-				$lowerBound = new DateTime($item['dateUntil']);
-				
-            if ($lowerBound < $checkDate && $checkDate < $upperBound){
-                    return  $item['horoscopeSign'];
-				}
+	 $myDate = new DateTime($date);
+	 $found = false;
+	 for ($i = 0; $i < count($result) && !$found;$i++){
+		   $from = new DateTime($result[$i]['dateFrom']);
+			$to = new DateTime($result[$i]['dateUntil']);
 
-        }
+			if ($from < $myDate && $myDate < $to){
+									  $res = $result[$i]['horoscopeSign'];
+									  $found = true;
+			}else {
+				$res = 'nopp';
+			}
+	 }
+	 return $res;
+   //  foreach($result as $item){
+   //          $upperBound = new DateTime($item['dateFrom']);
+	// 			$lowerBound = new DateTime($item['dateUntil']);
+				
+   //          if ($lowerBound < $checkDate && $checkDate < $upperBound){
+   //                  return  $item['horoscopeSign'];
+	// 			}
+
+   //      }
 
         //  if ($lowerBound < $upperBound) {
         //      $between = $lowerBound < $checkDate && $checkDate < $upperBound;
