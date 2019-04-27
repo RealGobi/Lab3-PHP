@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(211, 211, 211);
+    flex-direction: column;
+    text-align: center;
+
+    
+    article {
+        padding: 3rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.267);
+        input{
+            margin: 1rem;
+            &[type="number"]{
+                text-align: center;
+            }
+        }
+    }
+}
