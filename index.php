@@ -13,11 +13,11 @@
     <article>
         <h1>Se ditt Horoskop</h1>
         <h3>Ange datum</h3>
-        <input type="date" value="<?php echo date('Y-m-d'); ?>" id="date" ><br>
+        <input type="date" value="" id="date" ><br>
         <button onclick="save()">Spara</button>
         <button onclick="update()">Uppdatera</button>
         <button onclick="kill()">Ta bort</button>
-        <ul class="save">
+        <ul id="save">
         </ul>
         <script src="js.js"></script>
     </article>

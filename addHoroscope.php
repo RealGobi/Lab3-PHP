@@ -12,7 +12,6 @@ class AddHoroskop{
         $query->execute();
         $result = $query->fetchAll();
 
-
         if(empty($result)){
             return array('error' => 'Något gick fel');
         }
@@ -27,7 +26,7 @@ function check($date, $result){
 		$from = new DateTime($result[$i]['dateFrom']);
 		$to = new DateTime($result[$i]['dateUntil']);
  
-		if ($from <= $myDate && $myDate <= $to && !isset($_SESSION["current"])){
+		if ($from <= $myDate && $myDate <= $to){
 				$res =   $result[$i]['horoscopeSign'];
 				$found = true;
 				$_SESSION['current'] = $result[$i]['horoscopeSign'];
@@ -37,11 +36,5 @@ function check($date, $result){
  } 
  return $res;
 }
-
-
-
-
-
-
 
 ?>

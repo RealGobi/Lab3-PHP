@@ -1,19 +1,30 @@
 <?php
 
- include "addHoroscope.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     try {
+        if($_POST['collectionType'] == 'current'){
+             include "addHoroscope.php";
+             $date = $_POST['inputDate'];
+             $currentHoroskop = new AddHoroskop();
+             $databaseResult = $currentHoroskop->save($date);
+             echo json_encode($databaseResult);
+             exit();
+            }
+            if($_POST['collectionType'] == 'update'){
+            include "updateHoroscope.php";
             $date = $_POST['inputDate'];
             $currentHoroskop = new AddHoroskop();
-            $databaseResult = $currentHoroskop->save($date);
+            $databaseResult = $currentHoroskop->update($date);
             echo json_encode($databaseResult);
             exit();
+        }
          
-    } catch(PODException $error){
+    } catch(PODException $e){
         throw $e;
     }
 } 
+
 
 
 ?>
