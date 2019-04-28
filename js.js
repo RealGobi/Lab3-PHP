@@ -19,16 +19,10 @@ function save(){
    console.log(date);
    
     var requestData = new FormData()
-    requestData.append("collectionType", "current")
+    requestData.append("collectionType", "current");
     requestData.append("inputDate", date);
     makeReq("function.php", "POST", requestData, (response)=>{
-        console.log(response)
-// skriver ut allt i js, men ska väl va i php? hmm..
-    const htmlList = document.querySelector('.save');
-    htmlList.innerHTML = '';
-        var listItem = document.createElement('li')
-        listItem.innerHTML =  JSON.stringify(response).substr(1).slice(0, -1);
-        htmlList.appendChild(listItem)
-    
+        console.log(response)    
 })
 }
+

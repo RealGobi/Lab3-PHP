@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,8 @@
         <button onclick="save()">Spara</button>
         <button onclick="update()">Uppdatera</button>
         <button onclick="kill()">Ta bort</button>
-    <ul class="save"></ul>
+        <ul class="save">
+        </ul>
         <script src="js.js"></script>
     </article>
 </body>

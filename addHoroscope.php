@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 
 <?php
-
 class AddHoroskop{
     function __construct(){
         include_once('database.php');
@@ -21,23 +20,24 @@ class AddHoroskop{
     }
 }
 function check($date, $result){
+	$myDate = new DateTime($date);
+	$found = false;
 
-	 $myDate = new DateTime($date);
-	 $found = false;
-	 for ($i = 0; $i < count($result) && !$found;$i++){
-		   $from = new DateTime($result[$i]['dateFrom']);
-			$to = new DateTime($result[$i]['dateUntil']);
-
-			if ($from <= $myDate && $myDate <= $to){
-					$res =   $result[$i]['horoscopeSign'];
-					$found = true;
-					$_SESSION['current'] = $result[$i]['horoscopeSign'];
-				} else {
-					$res = 'nopp';
-			}
-	 }
-	 return $res;
+	for ($i = 0; $i < count($result) && !$found;$i++){
+		$from = new DateTime($result[$i]['dateFrom']);
+		$to = new DateTime($result[$i]['dateUntil']);
+ 
+		if ($from <= $myDate && $myDate <= $to && !isset($_SESSION["current"])){
+				$res =   $result[$i]['horoscopeSign'];
+				$found = true;
+				$_SESSION['current'] = $result[$i]['horoscopeSign'];
+			} else {
+				$res = 'nopp';
+		}
+ } 
+ return $res;
 }
+
 
 
 
