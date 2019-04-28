@@ -27,11 +27,12 @@ function check($date, $result){
 		$to = new DateTime($result[$i]['dateUntil']);
  
 		if ($from <= $myDate && $myDate <= $to){
-				$res =   $result[$i]['horoscopeSign'];
+				$res =  true;
 				$found = true;
 				$_SESSION['current'] = $result[$i]['horoscopeSign'];
+			
 			} else {
-				$res = 'nopp';
+				$res = false;
 		}
  } 
  return $res;

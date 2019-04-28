@@ -33,7 +33,7 @@ function save(){
     requestData.append("collectionType", "current");
     requestData.append("inputDate", date);
     makeReq("function.php", "POST", requestData, (response)=>{
-        console.log(response)    
+        console.log(response) 
 })
 }
 
@@ -44,20 +44,17 @@ function print () {
     printHoroscope.innerText = response;
     })
 }
-print();
 
 function update () {
-    printHoroscope.innerText = '';   
-    let vald = document.getElementById('date').value;
-    let dieYear = vald.slice(5,10);
-    let date = dieYear.replace('-','/');
+    let valt = document.getElementById('date').value;
+    let year = valt.slice(5,10);
+    let dateUp = year.replace('-','/');
     var requestData = new FormData()
     requestData.append("collectionType", "update");
-    requestData.append("inputDate", date);
-    console.log('update1');
+    requestData.append("inputDate", dateUp);
     makeReq("function.php", "POST", requestData, (response)=>{
-        console.log('update2') 
-        printHoroscope.innerText = response;   
+        console.log(response)  
+        print();
 })
 }
 
@@ -65,6 +62,7 @@ function update () {
     var requestData = new FormData()
     makeReq("deleteHoroscope.php", "DELETE", requestData, (response)=>{
         console.log(response)
+        document.getElementById("date").value = "";
     printHoroscope.innerText = '';
     })
 }
