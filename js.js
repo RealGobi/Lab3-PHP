@@ -1,5 +1,6 @@
 const printHoroscope = document.getElementById('save');
-
+document.getElementById("button2").disabled = true;
+document.getElementById("button3").disabled = true;
 
 function makeReq(url, method, requestData, callback) {
     var headers;
@@ -24,6 +25,9 @@ function makeReq(url, method, requestData, callback) {
    }
 
 function save(){
+  document.getElementById("button1").disabled = true;
+  document.getElementById("button2").disabled = false;
+  document.getElementById("button3").disabled = false;
    let vald = document.getElementById('date').value;
    let dieYear = vald.slice(5,10);
    let date = dieYear.replace('-','/');
@@ -46,6 +50,9 @@ function print () {
 }
 
 function update () {
+  document.getElementById("button1").disabled = true;
+  document.getElementById("button2").disabled = true;
+  document.getElementById("button3").disabled = false;
     let valt = document.getElementById('date').value;
     let year = valt.slice(5,10);
     let dateUp = year.replace('-','/');
@@ -59,6 +66,9 @@ function update () {
 }
 
  function kill () {
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").disabled = true;
+  document.getElementById("button3").disabled = true;
     var requestData = new FormData()
     makeReq("deleteHoroscope.php", "DELETE", requestData, (response)=>{
         console.log(response)

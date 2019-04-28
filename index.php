@@ -14,9 +14,9 @@
         <h1>Se ditt Horoskop</h1>
         <h3>Ange datum</h3>
         <input type="date" value="<?php echo date('Y-m-d'); ?>" id="date" ><br>
-        <button onclick="save()">Spara</button>
-        <button onclick="update()">Uppdatera</button>
-        <button onclick="kill()">Ta bort</button>
+        <button id="button1" onclick="save()">Spara</button>
+        <button id="button2" onclick="update()">Uppdatera</button>
+        <button id="button3" onclick="kill()">Ta bort</button>
         <ul id="save">
         </ul>
         <script src="js.js"></script>
