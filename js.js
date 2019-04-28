@@ -1,6 +1,7 @@
 const printHoroscope = document.getElementById('save');
-document.getElementById("button2").disabled = true;
-document.getElementById("button3").disabled = true;
+const btn_save = document.getElementById("button1").disabled = false;
+const btn_update = document.getElementById("button2").disabled = true;
+const btn_kill = document.getElementById("button3").disabled = true;
 
 function makeReq(url, method, requestData, callback) {
     var headers;
