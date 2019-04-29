@@ -2,27 +2,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(211, 211, 211);
+    background: rgba(255, 62, 62, 0.274);
     flex-direction: column;
     text-align: center;
 
-    
+    h1 {
+        font-size: 2rem;
+    }
     article {
         padding: 3rem;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.267);
         ul {
-            margin: 5rem 0 0 0;
+            margin: 4rem 0 0 0;
             padding: 0;
-            li {
-                list-style: none;
-            }
+            color: rgb(6, 31, 7);
+            text-shadow: 2px 2px 2px silver;
+            text-decoration-line: underline;
+            list-style: none;
+
         }
         input{
-            margin: 1rem;
-            &[type="number"]{
-                text-align: center;
-            }
+            margin: 2rem;
+            padding: .2rem;
+            font-size: 1rem;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: rgb(116, 65, 116);
+            text-align: center;
         }
     }
 }

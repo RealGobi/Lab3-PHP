@@ -8,12 +8,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: lightgray;
+  background: rgba(255, 62, 62, 0.274);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+}
+
+body h1 {
+  font-size: 2rem;
 }
 
 body article {
@@ -23,19 +27,21 @@ body article {
 }
 
 body article ul {
-  margin: 5rem 0 0 0;
+  margin: 4rem 0 0 0;
   padding: 0;
-}
-
-body article ul li {
+  color: #061f07;
+  text-shadow: 2px 2px 2px silver;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
   list-style: none;
 }
 
 body article input {
-  margin: 1rem;
-}
-
-body article input[type="number"] {
+  margin: 2rem;
+  padding: .2rem;
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #744174;
   text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
