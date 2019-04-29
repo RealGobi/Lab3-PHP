@@ -26,6 +26,22 @@ body article {
   background: rgba(255, 255, 255, 0.267);
 }
 
+body article button {
+  padding: .7rem 1rem;
+  color: white;
+  background: #39698a;
+  border-radius: 4px;
+}
+
+body article button:hover {
+  background: #274a61;
+}
+
+body article button[disabled] {
+  background: rgba(35, 52, 56, 0.274);
+  pointer-events: none;
+}
+
 body article ul {
   margin: 4rem 0 0 0;
   padding: 0;

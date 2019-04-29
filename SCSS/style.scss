@@ -13,6 +13,21 @@ body {
         padding: 3rem;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.267);
+
+        button {
+            padding: .7rem 1rem;
+            color: white;
+            background: rgb(57, 105, 138);
+            border-radius: 4px;
+        }
+        button:hover {
+            background: rgb(39, 74, 97);
+        }
+        button[disabled] {
+            background: rgba(35, 52, 56, 0.274);
+            pointer-events: none;
+        }
+
         ul {
             margin: 4rem 0 0 0;
             padding: 0;
@@ -29,6 +44,6 @@ body {
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             color: rgb(116, 65, 116);
             text-align: center;
-        }
+       }
     }
 }
