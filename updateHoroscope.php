@@ -20,26 +20,23 @@ class UpdateHoroskop{
     }
 }
  
-        function makeUpdate($date, $result){
-        $myDate = new DateTime($date);
-        $found = false;
-    
-        for ($i = 0; $i < count($result) && !$found;$i++){
-            $from = new DateTime($result[$i]['dateFrom']);
-            $to = new DateTime($result[$i]['dateUntil']);
-        
-            if ($from <= $myDate && $myDate <= $to){
-				$res = true;
-				$found = true;
-                $_SESSION['current'] = $result[$i]['horoscopeSign'];
-                } else {
-                    $res = false;
-            }
-        } 
-        return $res;
-    }
-    
+    function makeUpdate($date, $result){
+    $myDate = new DateTime($date);
+    $found = false;
 
-
+    for ($i = 0; $i < count($result) && !$found;$i++){
+        $from = new DateTime($result[$i]['dateFrom']);
+        $to = new DateTime($result[$i]['dateUntil']);
+    
+        if ($from <= $myDate && $myDate <= $to){
+            $res = true;
+            $found = true;
+            $_SESSION['current'] = $result[$i]['horoscopeSign'];
+            } else {
+                $res = false;
+        }
+    } 
+    return $res;
+}
 
 ?>

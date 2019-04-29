@@ -7,7 +7,6 @@ class AddHoroskop{
         $this->database = new Database();
     }
      public function save($date){
-
         $query = $this->database->connection->prepare("SELECT * FROM horoskop;");
         $query->execute();
         $result = $query->fetchAll();
