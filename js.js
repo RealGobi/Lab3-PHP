@@ -39,6 +39,7 @@ function save(){
     requestData.append("inputDate", date);
     makeReq("function.php", "POST", requestData, (response)=>{
         console.log(response) 
+        print();
 })
 }
 

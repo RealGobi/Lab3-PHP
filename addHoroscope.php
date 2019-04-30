@@ -28,7 +28,7 @@ function check($date, $result){
 		if ($from <= $myDate && $myDate <= $to){
 				$res =  true;
 				$found = true;
-				$_SESSION['current'] = $result[$i]['horoscopeSign'];
+                $_SESSION['current'] = $result[$i]['horoscopeSign'];
 			
 			} else {
 				$res = false;
